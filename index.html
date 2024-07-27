@@ -8,14 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* Center the Resume button */
+        /* Center the Resume and Contact Me buttons */
         #header .actions {
             text-align: center;
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Adjust gap as needed */
         }
+
         #header .actions .button {
             display: inline-block;
-            margin: 0 auto;
+        }
+
+        #header .actions .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Adjust spacing between items */
+        }
+
+        #header .actions .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #header .actions .contact-info a:hover {
+            text-decoration: underline;
         }
 
         /* Style for the arrow */
@@ -54,138 +72,309 @@
             width: 100%;
             height: auto;
         }
+
+        /* Gallery styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            position: relative;
+            width: 300px; /* Adjust size as needed */
+            height: 200px; /* Adjust size as needed */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Style for Academic Projects section */
+        #projects {
+            padding: 4em 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        #projects h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+        .project a {
+            font-size: 1.2em;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .project a:hover {
+            color: #007BFF;
+        }
+        .project p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .project-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body class="is-preload">
 
 <!-- Wrapper -->
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Header -->
-        <header id="header" class="alt">
-            <!-- Cool Picture -->
-            <div class="profile-pic">
-                <img src="images/yousaf maaz pic..png" alt="Yousaf Maaz Profile Picture" />
-            </div>
-            <h1>Yousaf Maaz</h1>
-            <p>Peshawar, Pakistan</p>
-            <ul class="actions">
-                <li><a href="images/Yousaf Maaz Resume.pdf" class="button">Resume</a></li>
-            </ul>
-            <!-- Scroll Down Arrow -->
-            <div class="scroll-down">
-                <a href="#main"><i class="fa-solid fa-chevron-down arrow"></i></a>
-            </div>
-        </header>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="#intro" class="active">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Introduction -->
-            <section id="intro" class="main">
-                <div class="spotlight">
-                    <div class="content">
-                        <header class="major">
-                            <h2>Hi there 👋, My Name is Yousaf Maaz</h2>
-                        </header>
-                        <p>I am Yousaf Maaz, studying Software Engineering at FAST-NUCES, currently enrolled in the 4th semester. 
-                            I am experienced in C/C++ programming with a passion for front-end development. 
-                            I am skilled in designing efficient web pages and am currently undergoing front-end training.
-                            Problem-solving mindset, dedicated to learning.</p>
-                    </div>
-                    <span class="image"><img src="images/pic01.jpg" alt="Profile Picture" /></span>
-                </div>
-            </section>
-
-            <!-- Skills -->
-            <section id="skills" class="main special">
-                <header class="major">
-                    <h2>Skills</h2>
-                </header>
-                <ul class="features">
-                    <li>
-                        <span class="icon solid major style1 fa-code"></span>
-                        <h3>Web Development</h3>
-                        <p>Intermediate</p>
-                    </li>
-                    <li>
-                        <span class="icon major style3 fas fa-coffee"></span>
-                        <h3>Java Application</h3>
-                        <p>Experienced</p>
-                    </li>
-                    <li>
-                        <span class="icon major style5 fas fa-mobile-alt"></span>
-                        <h3>Flutter</h3>
-                        <p>Intermediate</p>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Education -->
-            <section id="education" class="main special">
-                <header class="major">
-                    <h2>Education</h2>
-                    <p>Journey through my academic achievements</p>
-                </header>
-                <ul class="statistics">
-                    <li class="style1">
-                        <span class="icon solid fa-school"></span>
-                        <h3>School</h3>
-                        <p>Allied Schools - Matric</p>
-                    </li>
-                    <li class="style2">
-                        <span class="icon solid fa-university"></span>
-                        <h3>College</h3>
-                        <p>Concordia College - ICS</p>
-                    </li>
-                    <li class="style3">
-                        <span class="icon solid fa-graduation-cap"></span>
-                        <h3>University</h3>
-                        <p>FAST-NUCES</p>
-                    </li>
-                </ul>
-            </section>
-
+    <!-- Header -->
+    <header id="header" class="alt">
+        <!-- Cool Picture -->
+        <div class="profile-pic">
+            <img src="images/yousaf maaz pic..png" alt="Yousaf Maaz Profile Picture" />
         </div>
+        <h1>Yousaf Maaz</h1>
+        <p>Peshawar, Pakistan</p>
+        <ul class="actions">
+            <li><a href="images/Yousaf Maaz Resume.pdf" class="button">Resume</a></li>
+            <li><a href="#footer" class="button">Contact Me</a></li>
+        </ul>
+        <!-- Scroll Down Arrow -->
+        <div class="scroll-down">
+            <a href="#main"><i class="fa-solid fa-chevron-down arrow"></i></a>
+        </div>
+    </header>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <section>
-                <h2>Contact Me</h2>
-                <dl class="alt">
-                    <dt>Address</dt>
-                    <dd>Peshawar, 25000, Pakistan</dd>
-                    <dt>Phone</dt>
-                    <dd><a href="tel:+923049737921">+923049737921</a></dd>
-                    <dt>Email</dt>
-                    <dd><a href="mailto:yousafmaaz.kakakhel@gmail.com">yousafmaaz.kakakhel@gmail.com</a></dd>
-                </dl>
-                <ul class="icons">
-                    <li><a href="https://github.com/Yousaf-Maaz" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/yousaf-maaz/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                </ul>
-            </section>
-        </footer>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="#intro" class="active">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Academic Projects</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Introduction -->
+        <section id="intro" class="main">
+            <div class="spotlight">
+                <div class="content">
+                    <header class="major">
+                        <h2>Hi there 👋, My Name is Yousaf Maaz</h2>
+                    </header>
+                    <p>I am Yousaf Maaz, studying Software Engineering at FAST-NUCES, currently enrolled in the 4th semester. 
+                        I am experienced in C/C++ programming with a passion for front-end development. 
+                        I am skilled in designing efficient web pages and am currently undergoing front-end training.
+                        Problem-solving mindset, dedicated to learning.</p>
+                </div>
+                <span class="image"><img src="images/pic01.jpg" alt="Profile Picture" /></span>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="main special">
+            <header class="major">
+                <h2>Skills</h2>
+            </header>
+            <ul class="features">
+                <li>
+                    <span class="icon solid major style1 fa-code"></span>
+                    <h3>Web Development</h3>
+                    <p>HTML5, CSS 3, MVC, JavaScript, Java web application, Flutter Basic, Dart Programming</p>
+                </li>
+                <li>
+                    <span class="icon solid major style1 fa-database"></span>
+                    <h3>Databases</h3>
+                    <p>MySQL, SQL Server, Tomcat Server</p>
+                </li>
+                <li>
+                    <span class="icon solid major style1 fa-pencil-ruler"></span>
+                    <h3>Designing Tools</h3>
+                    <p>Figma, Canva</p>
+                </li>
+                <li>
+                    <span class="icon solid major style1 fa-tasks"></span>
+                    <h3>Project Management</h3>
+                    <p>Git, GitHub, JIRA</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="main special">
+            <header class="major">
+                <h2>Education</h2>
+                <p>Academic Journey</p>
+            </header>
+            <ul class="statistics">
+                <li class="style1">
+                    <span class="icon solid fa-school"></span>
+                    <h3>School</h3>
+                    <p>Allied Schools - Matriculation</p>
+                </li>
+                <li class="style2">
+                    <span class="icon solid fa-university"></span>
+                    <h3>College</h3>
+                    <p>Concordia College Peshawar - ICS</p>
+                </li>
+                <li class="style3">
+                    <span class="icon solid fa-laptop"></span>
+                    <h3>University</h3>
+                    <p>FAST-NUCES - Software Engineering (Currently enrolled)</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Academic Projects -->
+        <section id="projects" class="main special">
+            <header class="major">
+                <h2>Academic Projects</h2>
+                <p>A showcase of my academic work</p>
+            </header>
+            <div class="project-container">
+                <div class="project">
+                    <a href="https://github.com/Yousaf-Maaz/XERO-SpaceStation-Project-Database-System" target="_blank">XERO SpaceStation</a>
+                    <p>This project is a Database Management System (DBMS) designed for a space program. It involves managing all necessary resources of the space station, tracking astronauts, and storing information about discoveries made at the space station. The system uses datasets for each table and leverages SQL for data management. The project relies on mysql-connector-j-8.4.0-javadoc for database connectivity.</p>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/Yousaf-Maaz/EasyDataAnaylzer-SDA-Project-Using-Java--Tomcat-server" target="_blank">Easy DataAnalyzer</a>
+                    <p>EasyDataAnalyzer is a user-friendly data analysis tool designed to help students and entry-level professionals gain hands-on experience with data analysis. This tool allows users to upload CSV files, and visualize the results using various graphs. The primary goal of EasyDataAnalyzer is to provide an easy-to-use platform for those new to data analysis.</p>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/Yousaf-Maaz/GUI-Calculator-App" target="_blank">Calculator-App</a>
+                    <p>This is a simple calculator application developed in C# using Windows Forms. It provides basic arithmetic operations such as addition, subtraction, multiplication, and division, along with additional functionalities for calculating square and square root.</p>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/Yousaf-Maaz/Nagel-Schreckenberg-NS-C-Traffic-simulation-" target="_blank">Nagel-Schreckenberg Traffic Simulation</a>
+                    <p>The Nagel-Schreckenberg (NS) Traffic Simulation repository! This project offers an interactive and dynamic simulation of traffic flow based on the Nagel-Schreckenberg traffic model implemented in C++.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="main special">
+            <header class="major">
+                <h2>Gallery</h2>
+                <p>Highlights from my tech journey</p>
+            </header>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/memory1.jpg" alt="Memory 1">
+                    <div class="gallery-caption">Receiving a book from Team Vector</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/memory2.jpg" alt="Memory 2">
+                    <div class="gallery-caption">Winner of the NasCon'24 Code Jail competition</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Memory4.JPG.png" alt="Memory 3">
+                    <div class="gallery-caption">Appreciation Award as Zindigi Representative at Campus</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Memory3.jpeg" alt="Memory 4">
+                    <div class="gallery-caption">Organizer of Google Developer Group DevFest 2023</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Memory5.png" alt="Memory 5">
+                    <div class="gallery-caption">Pioneering Business Innovation and Creativity as Campus Lead, ZP Society</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Memory6.png" alt="Memory 6">
+                    <div class="gallery-caption">Key Contributor to the KP Tourism SRS Project</div>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
 
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer id="footer">
+        <section>
+            <h2>Contact Me</h2>
+            <dl class="alt">
+                <dt>Address</dt>
+                <dd>Peshawar, 25000, Pakistan</dd>
+                <dt>Phone</dt>
+                <dd><a href="tel:+923049737921">+923049737921</a></dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:yousafmaaz.kakakhel@gmail.com">yousafmaaz.kakakhel@gmail.com</a></dd>
+            </dl>
+            <ul class="icons">
+                <li><a href="https://github.com/Yousaf-Maaz" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/yousaf-maaz/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </section>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
